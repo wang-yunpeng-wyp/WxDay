@@ -36,17 +36,17 @@ public class Bootstrap {
         int x = ca.get(GregorianCalendar.AM_PM);//结果为“0”是上午     结果为“1”是下午
          String wxip = null;
 
-        if (x == 1) {
+        /*if (x == 1) {
             wxip = "onDBJMymfYGR2_grS2DTSbs4iIUZ0izhenRCiYnGxnI";
         } else {
             wxip = "alPUNA7ndnQhUscfIK3xjcAy1HJqRNE4RLNQd7crx00";
-        }
-        /*if (x == 1) {
+        }*/
+        if (x == 1) {
             wxip = "5lFZaNChhOQcSrLBNK2zyq3TwpKJ7bEcKUVT4FDkvKk";
         } else {
             wxip = "RQdxgfbxtQCDlyTIsqfuY03YmhZd-e9TR05R2ktfeM8";
-        }*/
-        
+        }
+
         
         if (StrUtil.hasEmpty(APP_ID, SECRET, wxip)) {
             throw new IllegalArgumentException("请检查配置");

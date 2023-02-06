@@ -14,8 +14,8 @@ import static cn.hutool.json.JSONUtil.parseObj;
  */
 public class GaodeUtil {
     // 保留了没删 大家也可以用 一天5000限额
-   // private static final String key = "5f69460257bc787951c5da939769fb21";
-    private static final String key = "9806304cfe0bf3082e60dfab5f90287a";
+    private static final String key = "5f69460257bc787951c5da939769fb21";
+  //  private static final String key = "9806304cfe0bf3082e60dfab5f90287a";
         
     private static final String GEO_API = "https://restapi.amap.com/v3/geocode/geo?key=%s&address=%s&city=%s";
     private static final String WEATHER_API = "https://restapi.amap.com/v3/weather/weatherInfo?key=%s&city=%d&extensions=%s";
