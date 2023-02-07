@@ -150,7 +150,7 @@ public class Application {
         /**
          * 在一起纪念日
          */
-        String loveTime = friend.getLoveTime();
+       /* String loveTime = friend.getLoveTime();
         String[] loveSplit = loveTime.split("-");
         mon = loveSplit[1];
         day = loveSplit[2];
@@ -161,7 +161,7 @@ public class Application {
         SolarDate solarDate1 = loveD.toSolar();
         month = solarDate1.getMonth();
         day1 = solarDate1.getDay();
-        friend.setLoveTime(loveSplit[0]+ "-"+month+"-"+day1 );
+        friend.setLoveTime(loveSplit[0]+ "-"+month+"-"+day1 ); */
 
         Date time = calendar.getTime();
         time.setYear(5);
