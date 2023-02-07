@@ -38,7 +38,7 @@ public class Application {
 
         // new 一个 女友
         GirlFriend wypFriend = new GirlFriend("我的宝儿",
-                "北京市", "顺义区", "1998-03-10", "2022-02-03", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03");
+                "北京市", "顺义区", "1998-03-10", "2022-02-04", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03");
 
         wypFriend = lunarTime(wypFriend);
         int wyp = 0;
@@ -63,7 +63,7 @@ public class Application {
 
         //new 一个 女友
        GirlFriend zycFriend = new GirlFriend("我的宝儿\n爱你！！！",
-               "安阳市", "滑县", "1998-12-09", "2022-02-03", "oaiup5lY17LhWIOqwu5hMBnUKynY","2022-02-03");
+               "安阳市", "滑县", "1998-12-09", "2022-02-04", "oaiup5lY17LhWIOqwu5hMBnUKynY","2022-02-03");
         WxMpTemplateMessage wxMpTemplateMessage = MessageFactory.resolveMessage(zycFriend);
         System.err.println(wxMpTemplateMessage.toString());
         zycFriend = lunarTime(zycFriend);
@@ -91,7 +91,7 @@ public class Application {
 
       
        GirlFriend girlFriend3 = new GirlFriend("我的宝儿！",
-               "安阳市", "安阳市", "1998-12-09", "2022-02-03", "oaiup5n2TF8TPePzIeDzCgQsrTro","2022-02-03");
+               "安阳市", "安阳市", "1998-12-09", "2022-02-04", "oaiup5n2TF8TPePzIeDzCgQsrTro","2022-02-03");
 
        // girlFriend3 = lunarTime(girlFriend3);
 
