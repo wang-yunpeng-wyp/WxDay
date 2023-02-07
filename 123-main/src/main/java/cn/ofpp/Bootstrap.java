@@ -42,9 +42,9 @@ public class Bootstrap {
             wxip = "alPUNA7ndnQhUscfIK3xjcAy1HJqRNE4RLNQd7crx00";
         }*/
         if (x == 1) {
-            wxip = "5lFZaNChhOQcSrLBNK2zyq3TwpKJ7bEcKUVT4FDkvKk";
+            wxip = "c0RkxL8MC2XOWEMVbWAm4p5w1oMpVDFBltD3B7AUnAQ";
         } else {
-            wxip = "RQdxgfbxtQCDlyTIsqfuY03YmhZd-e9TR05R2ktfeM8";
+            wxip = "c0RkxL8MC2XOWEMVbWAm4p5w1oMpVDFBltD3B7AUnAQ";
         }
 
         

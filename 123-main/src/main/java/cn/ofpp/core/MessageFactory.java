@@ -28,9 +28,9 @@ public class MessageFactory {
         String wxip = null;
 
         if (x == 1) {
-            wxip = "5lFZaNChhOQcSrLBNK2zyq3TwpKJ7bEcKUVT4FDkvKk";
+            wxip = "YeoxbAZEAjxT3xyprp9rhM7ODc3PmnfBhucvd4L4kGQ";
         } else {
-            wxip = "RQdxgfbxtQCDlyTIsqfuY03YmhZd-e9TR05R2ktfeM8";
+            wxip = "pQJARuEUO-PkWCnMixNLBeDkXPqE8DG42I9Dbx7N1ZI";
         }
         //System.err.println(wxip);
 
@@ -42,63 +42,41 @@ public class MessageFactory {
                 .build();
     }
 
-    /**
-     *
-     * {@code {{xxxx.DATA}}} xxxx就是一个变量名，消息中设置变量 然后传递时传递变量即可
-     * <br/>
-     * 色彩取值可以从这里挑选 https://arco.design/palette/list
-     *
-     *  <p>
-     *      你叫{{friendName.DATA}}
-     *      今年{{howOld.DATA}}
-     *      距离下一次生日{{nextBirthday.DATA}}天
-     *      具体我们的下一次纪念日{{nextMemorialDay.DATA}}天
-     *      现在在{{province.DATA}}{{city.DATA}}
-     *      当前天气{{weather.DATA}}
-     *      当前气温{{temperature.DATA}}
-     *      风力描述{{winddirection.DATA}}
-     *      风力级别{{windpower.DATA}}
-     *      空气湿度{{humidity.DATA}}
-     *      {{author.DATA}}
-     *      {{origin.DATA}}
-     *      {{content.DATA}}
-     *  </p>
-     */
     private static List<WxMpTemplateData> buildData(Friend friend) {
         WeatherInfo weather = GaodeUtil.getNowWeatherInfo(getAdcCode(friend.getProvince(), friend.getCity()));
         RandomAncientPoetry.AncientPoetry ancientPoetry = RandomAncientPoetry.getNext();
         ArrayList list = new ArrayList();
         //list.add(  TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color("#D92AD9").build());
-        list.add( TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color("#D92AD9").build() );
-        list.add( TemplateDataBuilder.builder().name("nextSpring").value(friend.getSpring()).color("#D94AD9").build() );
-        list.add( TemplateDataBuilder.builder().name("friendName").value(friend.getFullName()).color("#D91AD9").build() );
-        list.add( TemplateDataBuilder.builder().name("howOld").value(friend.getHowOld().toString()).color("#F77234").build() );
-        list.add( TemplateDataBuilder.builder().name("howLongLived").value(friend.getHowLongLived()).color("#437004").build() );
-        list.add( TemplateDataBuilder.builder().name("nextBirthday").value(friend.getNextBirthdayDays()).color("#771F06").build() );
-        list.add( TemplateDataBuilder.builder().name("nextMemorialDay").value(friend.getNextMemorialDay()).color("#551DB0").build() );
-        list.add( TemplateDataBuilder.builder().name("province").value(friend.getProvince()).color("#F53F3F").build() );
-        list.add( TemplateDataBuilder.builder().name("city").value(friend.getCity()).color("#F53F3F").build() );
-        list.add( TemplateDataBuilder.builder().name("weather").value(weather.getWeather()).color("#00B42A").build() );
-        list.add( TemplateDataBuilder.builder().name("temperature").value(weather.getTemperature()).color("#722ED1").build() );
-        list.add( TemplateDataBuilder.builder().name("winddirection").value(weather.getWinddirection()).color("#F5319D").build() );
-        list.add( TemplateDataBuilder.builder().name("windpower").value(weather.getWindpower()).color("#3491FA").build() );
-        list.add( TemplateDataBuilder.builder().name("humidity").value(weather.getHumidity()).color("#F77234").build() );
-        list.add( TemplateDataBuilder.builder().name("author").value(ancientPoetry.getAuthor()).color("#F53F3F").build() );
-        list.add( TemplateDataBuilder.builder().name("origin").value(ancientPoetry.getOrigin()).color("#F53F3F").build() );
-        list.add( TemplateDataBuilder.builder().name("content").value(ancientPoetry.getContent()).color("#F53F3F").build() );
+        list.add( TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("nextSpring").value(friend.getSpring()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("friendName").value(friend.getFullName()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("howOld").value("宝贝今天也要元气慢慢哟！！").color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("howLongLived").value(friend.getHowLongLived()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("nextBirthday").value(friend.getNextBirthdayDays()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("nextMemorialDay").value(friend.getNextMemorialDay()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("province").value(friend.getProvince()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("city").value(friend.getCity()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("weather").value(weather.getWeather()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("temperature").value(weather.getTemperature()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("winddirection").value(weather.getWinddirection()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("windpower").value(weather.getWindpower()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("humidity").value(weather.getHumidity()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("author").value(ancientPoetry.getAuthor()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("origin").value(ancientPoetry.getOrigin()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("content").value(ancientPoetry.getContent()).color(cor()).build() );
 
-        list.add(TemplateDataBuilder.builder().name("wuyi").value(friend.getWuyi()).color("CCFF33").build());
-        list.add(TemplateDataBuilder.builder().name("zhongqiu").value(friend.getZhongqiui()).color("CCFF33").build());
-        list.add(TemplateDataBuilder.builder().name("shiyi").value(friend.getShiyi()).color("CCFF33").build());
-        list.add(TemplateDataBuilder.builder().name("chuxi").value(friend.getChuxi()).color("CCFF33").build());
+        list.add(TemplateDataBuilder.builder().name("wuyi").value(friend.getWuyi()).color(cor()).build());
+        list.add(TemplateDataBuilder.builder().name("zhongqiu").value(friend.getZhongqiui()).color(cor()).build());
+        list.add(TemplateDataBuilder.builder().name("shiyi").value(friend.getShiyi()).color(cor()).build());
+        list.add(TemplateDataBuilder.builder().name("chuxi").value(friend.getChuxi()).color(cor()).build());
 
-        list.add(TemplateDataBuilder.builder().name("tx").value("浪漫的灵魂，从不向平坦的日子妥协\n我爱你且日益剧增").color(cor()).build());
-        list.add(TemplateDataBuilder.builder().name("txx").value("").color(cor()).build());
+        list.add(TemplateDataBuilder.builder().name("tx").value("浪漫的灵魂，从不向平坦的日子妥协").color(cor()).build());
+        //list.add(TemplateDataBuilder.builder().name("txx").value("").color(cor()).build());
 
-        /**
+        /** 当前模板 模板最大长度600个字符 当前600个字符
          {{friendName.DATA}}
-         今年{{howOld.DATA}}岁
-         我们在一起的{{taryIt.DATA}} 天
+         {{howOld.DATA}}
+         我们已经在一起{{taryIt.DATA}} 天
          纪念日还有{{nextMemorialDay.DATA}}天
          生日还有{{nextBirthday.DATA}}天
          春节还有{{chuxi.DATA}}天
@@ -110,13 +88,12 @@ public class MessageFactory {
          当前气温：{{temperature.DATA}}°C
          风向：{{winddirection.DATA + "风"}}
          风力级别：{{windpower.DATA + "级"}}
-         湿度：{{humidity.DATA + "%"}}
+         空气湿度：{{humidity.DATA + "%"}}
          {{author.DATA}}
          {{origin.DATA}}
          {{content.DATA}}
-         {{tx}}
 
-
+         {{tx.DATA}}
 
          */
 
