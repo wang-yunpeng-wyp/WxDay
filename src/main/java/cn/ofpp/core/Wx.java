@@ -41,11 +41,13 @@ public class Wx {
     public static void sendTemplateMessage(WxMpTemplateMessage message) {
         getTemplateMsgService().ifPresent(service -> {
             try {
-                service.sendTemplateMsg(message);
+                String s = service.sendTemplateMsg(message);
+                System.err.println(message);
             } catch (Exception e) {
-                System.err.println("发送消息失败: " + e.getMessage());
+                System.err.println("发送消息失败: " + e);
             }
         });
+
     }
 
 }
