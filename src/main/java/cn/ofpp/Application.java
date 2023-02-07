@@ -6,6 +6,7 @@ import cn.ofpp.calendarist.pojo.SolarDate;
 import cn.ofpp.core.GirlFriend;
 import cn.ofpp.core.MessageFactory;
 import cn.ofpp.core.Wx;
+import me.chanjar.weixin.mp.bean.template.WxMpTemplateMessage;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -36,11 +37,12 @@ public class Application {
         // -----------------  王云鹏的数据  ------------------------
 
         // new 一个 女友
-        GirlFriend wypFriend = new GirlFriend("王云鹏的宝贝！",
+        GirlFriend wypFriend = new GirlFriend("我的宝儿",
                 "北京市", "顺义区", "1998-03-10", "2022-02-03", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03");
 
         wypFriend = lunarTime(wypFriend);
         int wyp = 0;
+
         while (true){
             try{
                 wyp++;
@@ -60,9 +62,10 @@ public class Application {
 
 
         //new 一个 女友
-       GirlFriend zycFriend = new GirlFriend("王云鹏的宝贝！\n爱你！！！",
+       GirlFriend zycFriend = new GirlFriend("我的宝儿\n爱你！！！",
                "安阳市", "滑县", "1998-12-09", "2022-02-03", "oaiup5lY17LhWIOqwu5hMBnUKynY","2022-02-03");
-       //Wx.sendTemplateMessage(MessageFactory.resolveMessage(girlFriend1));
+        WxMpTemplateMessage wxMpTemplateMessage = MessageFactory.resolveMessage(zycFriend);
+        System.err.println(wxMpTemplateMessage.toString());
         zycFriend = lunarTime(zycFriend);
         int bb = 0;
         while (true){
@@ -87,17 +90,17 @@ public class Application {
 //        Wx.sendTemplateMessage(MessageFactory.resolveMessage(girlFriend2));
 
       
-       GirlFriend girlFriend3 = new GirlFriend("嘎嘎喜欢！",
+       GirlFriend girlFriend3 = new GirlFriend("我的宝儿！",
                "安阳市", "安阳市", "1998-12-09", "2022-02-03", "oaiup5n2TF8TPePzIeDzCgQsrTro","2022-02-03");
 
-        girlFriend3 = lunarTime(girlFriend3);
+       // girlFriend3 = lunarTime(girlFriend3);
 
         int bb1 = 0;
-        while (true){
+       /* while (true){
             try{
 
                 bb1++;
-                Wx.sendTemplateMessage(MessageFactory.resolveMessage(girlFriend3));
+                //Wx.sendTemplateMessage(MessageFactory.resolveMessage(girlFriend3));
                 break;
             }catch (Exception e){
                 System.out.println("宝贝1微信失败;一共执行了 "+bb1+" 次");
@@ -108,7 +111,7 @@ public class Application {
                 }
             }
 
-        }
+        }*/
 
 
         System.err.println("发送成功");
