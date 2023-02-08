@@ -46,7 +46,6 @@ public class MessageFactory {
         WeatherInfo weather = GaodeUtil.getNowWeatherInfo(getAdcCode(friend.getProvince(), friend.getCity()));
         RandomAncientPoetry.AncientPoetry ancientPoetry = RandomAncientPoetry.getNext();
         ArrayList list = new ArrayList();
-        //list.add(  TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color("#D92AD9").build());
         list.add( TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextSpring").value(friend.getSpring()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("friendName").value(friend.getFullName()).color(cor()).build() );
@@ -71,7 +70,6 @@ public class MessageFactory {
         list.add(TemplateDataBuilder.builder().name("chuxi").value(friend.getChuxi()).color(cor()).build());
 
         list.add(TemplateDataBuilder.builder().name("tx").value("浪漫的灵魂，从不向平坦的日子妥协").color(cor()).build());
-        //list.add(TemplateDataBuilder.builder().name("txx").value("").color(cor()).build());
 
         /** 当前模板 模板最大长度600个字符 当前600个字符
          {{friendName.DATA}}
