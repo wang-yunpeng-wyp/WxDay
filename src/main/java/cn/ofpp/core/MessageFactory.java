@@ -28,9 +28,10 @@ public class MessageFactory {
         String wxip = null;
 
         if (x == 1) {
-            wxip = "YeoxbAZEAjxT3xyprp9rhM7ODc3PmnfBhucvd4L4kGQ";
+           wxip = "pQJARuEUO-PkWCnMixNLBeDkXPqE8DG42I9Dbx7N1ZI";
         } else {
-            wxip = "pQJARuEUO-PkWCnMixNLBeDkXPqE8DG42I9Dbx7N1ZI";
+           wxip = "YeoxbAZEAjxT3xyprp9rhM7ODc3PmnfBhucvd4L4kGQ";
+            
         }
         //System.err.println(wxip);
 
