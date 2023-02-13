@@ -51,7 +51,7 @@ public class MessageFactory {
         list.add( TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextSpring").value(friend.getSpring()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("friendName").value(friend.getFullName()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("howOld").value("宝贝今天也要元气慢慢哟！！").color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("howOld").value("宝贝今天也要元气满满哟！！").color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("howLongLived").value(friend.getHowLongLived()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextBirthday").value(friend.getNextBirthdayDays()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextMemorialDay").value(friend.getNextMemorialDay()).color(cor()).build() );
@@ -70,7 +70,7 @@ public class MessageFactory {
         list.add(TemplateDataBuilder.builder().name("shiyi").value(friend.getShiyi()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("chuxi").value(friend.getChuxi()).color(cor()).build());
 
-        list.add(TemplateDataBuilder.builder().name("tx").value("浪漫的灵魂，从不向平坦的日子妥协").color(cor()).build());
+        list.add(TemplateDataBuilder.builder().name("tx").value("浪漫的灵魂，从不向平淡的日子妥协").color(cor()).build());
         //list.add(TemplateDataBuilder.builder().name("txx").value("").color(cor()).build());
 
         /** 当前模板 模板最大长度600个字符 当前600个字符
