@@ -36,7 +36,7 @@ public class MessageFactory {
 
         String time = sf.format(today);
 
-        System.out.println("当前时间："+time);
+        System.out.println("当前时间："+time + 8);
 
         if (x == 1) {
             System.err.println("下午");
