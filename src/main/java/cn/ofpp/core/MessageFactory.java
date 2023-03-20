@@ -7,6 +7,7 @@ import cn.ofpp.calendarist.pojo.SolarDate;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateData;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateMessage;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static cn.ofpp.core.GaodeUtil.getAdcCode;
@@ -27,6 +28,15 @@ public class MessageFactory {
         int x = ca.get(GregorianCalendar.AM_PM);
         String wxip = null;
 
+        Date today = new Date();
+
+// 格式化时间
+
+        SimpleDateFormat sf = new SimpleDateFormat("HH");
+
+        String time = sf.format(today);
+
+        System.out.println("当前时间："+time);
 
         if (x == 1) {
             System.err.println("下午");
