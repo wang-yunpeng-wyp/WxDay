@@ -40,6 +40,7 @@ public class Friend {
     private String zhongqiui;
     private String yuandan;
     private String chuxi;
+    private String nextTime;
 
     public String getChuxi() {
         return chuxi;
@@ -219,4 +220,13 @@ public class Friend {
     public void setTaryIt(String taryIt) {
         this.taryIt = taryIt;
     }
+
+    public String getNextTime() {
+        return nextTime;
+    }
+
+    public void setNextTime(String nextTime) {
+        this.nextTime = nextTime;
+    }
+
 }
