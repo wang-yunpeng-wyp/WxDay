@@ -61,7 +61,7 @@ public class MessageFactory {
         list.add( TemplateDataBuilder.builder().name("weather").value(weather.getWeather()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("temperature").value(weather.getTemperature()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("winddirection").value(weather.getWinddirection()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("windpower").value(weather.getWindpower()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("windpower").value(weather.getWindpower() + "风").color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("humidity").value(weather.getHumidity()+ "%").color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("author").value(ancientPoetry.getAuthor()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("origin").value(ancientPoetry.getOrigin()).color(cor()).build() );
