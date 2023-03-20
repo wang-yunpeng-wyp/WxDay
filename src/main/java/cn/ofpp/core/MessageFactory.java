@@ -47,7 +47,7 @@ public class MessageFactory {
         }
 
         return WxMpTemplateMessage.builder()
-                .url("https://chishenme.xyz/") // 点击后的跳转链接 可自行修改 也可以不填
+                .url("http://slither.io/") // 点击后的跳转链接 可自行修改 也可以不填
                 .toUser(friend.getUserId())
                 .templateId(StrUtil.emptyToDefault(friend.getTemplateId(),wxip))
                 .data(buildData(friend))
