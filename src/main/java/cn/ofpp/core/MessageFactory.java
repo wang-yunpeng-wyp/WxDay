@@ -27,12 +27,14 @@ public class MessageFactory {
         int x = ca.get(GregorianCalendar.AM_PM);
         String wxip = null;
 
+
         if (x == 1) {
-            wxip = "YeoxbAZEAjxT3xyprp9rhM7ODc3PmnfBhucvd4L4kGQ";
+            System.err.println("下午");
+            wxip = "YeoxbAZEAjxT3xyprp9rhM7ODc3PmnfBhucvd4L4kGQ"; //下午
         } else {
-            wxip = "pQJARuEUO-PkWCnMixNLBeDkXPqE8DG42I9Dbx7N1ZI";
+            System.err.println("上午");
+            wxip = "pQJARuEUO-PkWCnMixNLBeDkXPqE8DG42I9Dbx7N1ZI";//上午
         }
-        //System.err.println(wxip);
 
         return WxMpTemplateMessage.builder()
                 .url("Me marry you Emily！！！") // 点击后的跳转链接 可自行修改 也可以不填
@@ -50,7 +52,7 @@ public class MessageFactory {
         //list.add(  TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color("#D92AD9").build());
         list.add( TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextSpring").value(friend.getSpring()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("friendName").value(kong +friend.getFullName()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("friendName").value(kong+friend.getFullName()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("howOld").value("宝贝今天也要元气满满哟!!\r\n"+kong+"老婆我爱你♥\r\n" +
                 kong+"还有"+friend.getNextTime() + "天就见面啦!!").color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("howLongLived").value(friend.getHowLongLived()).color(cor()).build() );
@@ -60,7 +62,7 @@ public class MessageFactory {
         list.add( TemplateDataBuilder.builder().name("city").value(friend.getCity()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("weather").value(weather.getWeather()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("temperature").value(weather.getTemperature()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("winddirection").value(weather.getWinddirection() + "风").color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("winddirection").value(weather.getWinddirection()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("windpower").value(weather.getWindpower()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("humidity").value(weather.getHumidity()+ "%").color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("author").value(ancientPoetry.getAuthor()).color(cor()).build() );
@@ -93,7 +95,7 @@ public class MessageFactory {
          {{content.DATA}}
 
          {{tx.DATA}}
-            getNextTime 下次吃见面时间
+
          */
 
 
