@@ -33,12 +33,12 @@ public class MessageFactory {
 // 格式化时间
 
         SimpleDateFormat sf = new SimpleDateFormat("HH");
+        //获取北京时区
+        Integer time = Integer.valueOf(sf.format(today)) + 8;
 
-        String time = sf.format(today);
+        System.out.println("当前时间："+time);
 
-        System.out.println("当前时间："+time + 8);
-
-        if (x == 1) {
+        if (time > 12) {
             System.err.println("下午");
             wxip = "YeoxbAZEAjxT3xyprp9rhM7ODc3PmnfBhucvd4L4kGQ"; //下午
         } else {
