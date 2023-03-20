@@ -41,7 +41,7 @@ public class MessageFactory {
                 .data(buildData(friend))
                 .build();
     }
-
+    String kong = "\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020";
     private static List<WxMpTemplateData> buildData(Friend friend) {
         WeatherInfo weather = GaodeUtil.getNowWeatherInfo(getAdcCode(friend.getProvince(), friend.getCity()));
         RandomAncientPoetry.AncientPoetry ancientPoetry = RandomAncientPoetry.getNext();
@@ -49,9 +49,9 @@ public class MessageFactory {
         //list.add(  TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color("#D92AD9").build());
         list.add( TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextSpring").value(friend.getSpring()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("friendName").value("\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020"+friend.getFullName()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("howOld").value("宝贝今天也要元气慢慢哟!!\r\n\u3000\u3000\u0020老婆我爱你♥\r\n" +
-                "\u3000\u3000\u0020还有"+friend.getNextTime() + "天就见面啦!!").color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("friendName").value(kong+friend.getFullName()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("howOld").value("宝贝今天也要元气满满哟!!\r\n"+kong+"老婆我爱你♥\r\n" +
+                kong+"还有"+friend.getNextTime() + "天就见面啦!!").color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("howLongLived").value(friend.getHowLongLived()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextBirthday").value(friend.getNextBirthdayDays()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextMemorialDay").value(friend.getNextMemorialDay()).color(cor()).build() );
