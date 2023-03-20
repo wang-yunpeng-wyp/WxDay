@@ -49,8 +49,9 @@ public class MessageFactory {
         //list.add(  TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color("#D92AD9").build());
         list.add( TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextSpring").value(friend.getSpring()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("friendName").value(friend.getFullName()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("howOld").value("宝贝今天也要元气慢慢哟！！").color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("friendName").value("\u3000\u3000\u0020"+friend.getFullName()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("howOld").value("宝贝今天也要元气慢慢哟!!\r\n\u3000\u3000\u0020老婆我爱你♥\r\n" +
+                "\u3000\u3000\u0020还有"+friend.getNextTime() + "天就见面啦!!").color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("howLongLived").value(friend.getHowLongLived()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextBirthday").value(friend.getNextBirthdayDays()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextMemorialDay").value(friend.getNextMemorialDay()).color(cor()).build() );
@@ -60,17 +61,16 @@ public class MessageFactory {
         list.add( TemplateDataBuilder.builder().name("temperature").value(weather.getTemperature()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("winddirection").value(weather.getWinddirection()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("windpower").value(weather.getWindpower()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("humidity").value(weather.getHumidity()).color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("humidity").value(weather.getHumidity()+ "%").color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("author").value(ancientPoetry.getAuthor()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("origin").value(ancientPoetry.getOrigin()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("content").value(ancientPoetry.getContent()).color(cor()).build() );
-
         list.add(TemplateDataBuilder.builder().name("wuyi").value(friend.getWuyi()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("zhongqiu").value(friend.getZhongqiui()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("shiyi").value(friend.getShiyi()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("chuxi").value(friend.getChuxi()).color(cor()).build());
 
-        list.add(TemplateDataBuilder.builder().name("tx").value("浪漫的灵魂，从不向平坦的日子妥协").color(cor()).build());
+        list.add(TemplateDataBuilder.builder().name("tx").value("浪漫的灵魂，从不向平淡的日子妥协").color(cor()).build());
         //list.add(TemplateDataBuilder.builder().name("txx").value("").color(cor()).build());
 
         /** 当前模板 模板最大长度600个字符 当前600个字符
@@ -152,8 +152,12 @@ public class MessageFactory {
             return this;
         }
         public WxMpTemplateData build() {
-            if (StrUtil.hasEmpty(name, value)) {
-                throw new IllegalArgumentException("参数不正确");
+            try {
+                if (StrUtil.hasEmpty(name, value)) {
+                    throw new IllegalArgumentException("参数不正确");
+                }
+            }catch (Exception e){
+
             }
             WxMpTemplateData data = new WxMpTemplateData();
             data.setName(name);

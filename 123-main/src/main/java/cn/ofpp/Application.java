@@ -8,6 +8,7 @@ import cn.ofpp.core.MessageFactory;
 import cn.ofpp.core.Wx;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateMessage;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -31,18 +32,16 @@ public class Application {
      * <li>发消息</li>
      */
     public static void main(String[] args) {
-        // load and init
+
         Bootstrap.init();
-
-        // -----------------  王云鹏的数据  ------------------------
-
+        String nextdata= "2023-04-21";//下次见面时间
         // new 一个 女友
         GirlFriend wypFriend = new GirlFriend("我的宝儿",
-                "北京市", "顺义区", "1998-03-10", "2022-02-03", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03");
-
+                "北京市", "顺义区", "1998-03-10", "2022-02-04", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03");
+        //下次见面时间
+        wypFriend.setNextTime(nextdata);
         wypFriend = lunarTime(wypFriend);
         int wyp = 0;
-
         while (true){
             try{
                 wyp++;
@@ -59,13 +58,12 @@ public class Application {
 
         }
 
-
-
         //new 一个 女友
        GirlFriend zycFriend = new GirlFriend("我的宝儿\n爱你！！！",
-               "安阳市", "滑县", "1998-12-09", "2022-02-03", "oaiup5lY17LhWIOqwu5hMBnUKynY","2022-02-03");
+               "安阳市", "滑县", "1998-12-09", "2022-02-04", "oaiup5lY17LhWIOqwu5hMBnUKynY","2022-02-03");
         WxMpTemplateMessage wxMpTemplateMessage = MessageFactory.resolveMessage(zycFriend);
-        System.err.println(wxMpTemplateMessage.toString());
+        //下次见面时间
+        zycFriend.setNextTime(nextdata);
         zycFriend = lunarTime(zycFriend);
         int bb = 0;
         while (true){
@@ -84,47 +82,20 @@ public class Application {
             }
 
         }
-             
-//        GirlFriend girlFriend2 = new GirlFriend("宝贝，",
-//                "河南省", "安阳市", "1998-12-09", "2022-02-03", "oaiup5lY17LhWIOqwu5hMBnUKynY");
-//        Wx.sendTemplateMessage(MessageFactory.resolveMessage(girlFriend2));
-
-      
-       GirlFriend girlFriend3 = new GirlFriend("我的宝儿！",
-               "安阳市", "安阳市", "1998-12-09", "2022-02-03", "oaiup5n2TF8TPePzIeDzCgQsrTro","2022-02-03");
-
-       // girlFriend3 = lunarTime(girlFriend3);
-
-        int bb1 = 0;
-       /* while (true){
-            try{
-
-                bb1++;
-                //Wx.sendTemplateMessage(MessageFactory.resolveMessage(girlFriend3));
-                break;
-            }catch (Exception e){
-                System.out.println("宝贝1微信失败;一共执行了 "+bb1+" 次");
-                try{
-                    Thread.sleep(2000);
-                }catch (InterruptedException t){
-                    System.out.println("宝贝1休息异常");
-                }
-            }
-
-        }*/
-
 
         System.err.println("发送成功");
 
-        // new 一个 男友 也可单独针对一个friend设置模板ID 以达到不同人不同消息
-//        BoyFriend boyFriend = new BoyFriend("某男友",
-//                "江苏省", "南京市", "1999-08-08", "2011-04-16", "oQFk-5qtXv2uGNCu9oiCiV85KWD8", "5t7-Ksy8_rw-QmUkxf8J7Pe-QLQ2rBc7RWJi_pSmeh4");
-//        Wx.sendTemplateMessage(MessageFactory.resolveMessage(boyFriend));
+
     }
 
 
 
     public static GirlFriend lunarTime (GirlFriend friend){
+
+        String subtract = subtract(friend.getNextTime());
+        friend.setNextTime(subtract);
+
+
         // 获取当前年
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -150,7 +121,7 @@ public class Application {
         /**
          * 在一起纪念日
          */
-        String loveTime = friend.getLoveTime();
+       /* String loveTime = friend.getLoveTime();
         String[] loveSplit = loveTime.split("-");
         mon = loveSplit[1];
         day = loveSplit[2];
@@ -161,7 +132,7 @@ public class Application {
         SolarDate solarDate1 = loveD.toSolar();
         month = solarDate1.getMonth();
         day1 = solarDate1.getDay();
-        friend.setLoveTime(loveSplit[0]+ "-"+month+"-"+day1 );
+        friend.setLoveTime(loveSplit[0]+ "-"+month+"-"+day1 );*/
 
         Date time = calendar.getTime();
         time.setYear(5);
@@ -234,4 +205,23 @@ public class Application {
 
         return  friend;
     }
+
+    public static String subtract (String nextdata){
+
+        DateFormat dft = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date star = new Date();//开始时间
+            Date endDay=dft.parse(nextdata);//结束时间
+            Long starTime=star.getTime();
+            Long endTime=endDay.getTime();
+            Long num=endTime-starTime;//时间戳相差的毫秒数
+            Long day = num/24/60/60/1000;
+            System.out.println("相差天数为："+num/24/60/60/1000);//除以一天的毫秒数
+            return String.valueOf(day);
+        } catch (ParseException e) {
+
+        }
+        return  "";
+    }
+
 }
