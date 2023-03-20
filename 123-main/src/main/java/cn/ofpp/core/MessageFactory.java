@@ -69,7 +69,6 @@ public class MessageFactory {
         list.add(TemplateDataBuilder.builder().name("zhongqiu").value(friend.getZhongqiui()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("shiyi").value(friend.getShiyi()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("chuxi").value(friend.getChuxi()).color(cor()).build());
-
         list.add(TemplateDataBuilder.builder().name("tx").value("浪漫的灵魂，从不向平淡的日子妥协").color(cor()).build());
         //list.add(TemplateDataBuilder.builder().name("txx").value("").color(cor()).build());
 
