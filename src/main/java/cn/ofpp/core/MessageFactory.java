@@ -57,7 +57,13 @@ public class MessageFactory {
     private static List<WxMpTemplateData> buildData(Friend friend) {
         String kong = "\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020";
         WeatherInfo weather = GaodeUtil.getNowWeatherInfo(getAdcCode(friend.getProvince(), friend.getCity()));
-        RandomAncientPoetry.AncientPoetry ancientPoetry = RandomAncientPoetry.getNext();
+        RandomAncientPoetry.AncientPoetry ancientPoetry = null;
+        try{
+            ancientPoetry = RandomAncientPoetry.getNext();
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.println("获取古诗接口失败！！！");
+        }
         ArrayList list = new ArrayList();
         //list.add(  TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color("#D92AD9").build());
         list.add( TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color(cor()).build() );
