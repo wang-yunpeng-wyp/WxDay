@@ -33,9 +33,10 @@ public class MessageFactory {
 
 // 格式化时间 
 
-        SimpleDateFormat sf = new SimpleDateFormat("HH");
-        Integer time = today.gethours();
-
+ SimpleDateFormat sf = new SimpleDateFormat("HH");
+        String format = sf.format(today);
+        Integer time =  Integer.valueOf(format);
+            
         System.out.println("当前时间："+time);
 
         if (time > 12) {
