@@ -27,14 +27,14 @@ public class MessageFactory {
         GregorianCalendar ca = new GregorianCalendar();
         int x = ca.get(GregorianCalendar.AM_PM);
         String wxip = null;
+        //获取北京时区
 
-        Date today = new Date();
+        Date today = new Date(new Date().getTime() + (8 * 60 * 60 * 1000));
 
-// 格式化时间
+// 格式化时间 
 
         SimpleDateFormat sf = new SimpleDateFormat("HH");
-        //获取北京时区
-        Integer time = today.getHours() + 8;
+        Integer time = todat.gethours();
 
         System.out.println("当前时间："+time);
 
