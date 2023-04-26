@@ -59,7 +59,7 @@ public class Application {
         }
 
         //new 一个 女友
-       GirlFriend zycFriend = new GirlFriend("我的宝儿\n爱你！！！",
+       GirlFriend zycFriend = new GirlFriend("我的宝儿,爱你！",
                "安阳市", "滑县", "1998-12-09", "2022-02-04", "oaiup5lY17LhWIOqwu5hMBnUKynY","2022-02-03");
         WxMpTemplateMessage wxMpTemplateMessage = MessageFactory.resolveMessage(zycFriend);
         //下次见面时间
