@@ -34,7 +34,7 @@ public class MessageFactory {
 
         SimpleDateFormat sf = new SimpleDateFormat("HH");
         //获取北京时区
-        Integer time = Integer.valueOf(sf.format(today)) + 8;
+        Integer time = today.getHours() + 8;
 
         System.out.println("当前时间："+time);
 
