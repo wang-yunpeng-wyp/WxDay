@@ -34,7 +34,7 @@ public class MessageFactory {
 // 格式化时间 
 
         SimpleDateFormat sf = new SimpleDateFormat("HH");
-        Integer time = todat.gethours();
+        Integer time = today.gethours();
 
         System.out.println("当前时间："+time);
 
