@@ -48,6 +48,7 @@ public class Application {
                 Wx.sendTemplateMessage(MessageFactory.resolveMessage(wypFriend));
                 break;
             }catch (Exception e){
+                e.printStackTrace();
                 System.out.println("王云鹏微信失败;一共执行了 "+wyp+" 次");
                 try{
                     Thread.sleep(2000);
@@ -117,22 +118,10 @@ public class Application {
         int month = solarDate.getMonth();
         int day1 = solarDate.getDay();
         friend.setBirthday(split[0]+ "-"+month+"-"+day1);
-        //LunarDate lunarDate1 = c.toLunar();
-        /**
-         * 在一起纪念日
-         */
-       /* String loveTime = friend.getLoveTime();
-        String[] loveSplit = loveTime.split("-");
-        mon = loveSplit[1];
-        day = loveSplit[2];
-        lunarDate.setDay(Integer.valueOf(loveSplit[0]));
-        lunarDate.setMonth(Integer.valueOf(mon));
-        lunarDate.setDay(Integer.valueOf(day));
-        Calendarist loveD = Calendarist.fromLunar(lunarDate);
-        SolarDate solarDate1 = loveD.toSolar();
-        month = solarDate1.getMonth();
-        day1 = solarDate1.getDay();
-        friend.setLoveTime(loveSplit[0]+ "-"+month+"-"+day1 );*/
+
+
+
+
 
         Date time = calendar.getTime();
         time.setYear(5);
@@ -147,6 +136,7 @@ public class Application {
         Date zqda = null;
         Date yd = null;
         Date chuxidata= null;
+        Date duanwu= null;
         try {
             //五一
             wuyi  = df.parse( calendar.get(Calendar.YEAR) + "-05-01");
@@ -156,6 +146,7 @@ public class Application {
                 w = (wuyi.getTime() - date.getTime())/24/60/60/1000;
             }
             friend.setWuyi(String.valueOf(w));
+
             //十一
             shiyi  = df.parse( calendar.get(Calendar.YEAR) + "-10-01");
             Long s = (shiyi.getTime() - date.getTime())/24/60/60/1000;
@@ -177,6 +168,20 @@ public class Application {
                 z = (zqda.getTime() - date.getTime())/24/60/60/1000;
             }
             friend.setZhongqiui(String.valueOf(z));
+
+            //端午
+            lunarDate.setYear(year);
+            lunarDate.setMonth(5);
+            lunarDate.setDay(5);
+            Calendarist dw = Calendarist.fromLunar(lunarDate);
+            SolarDate dwSolarDate = dw.toSolar();
+            duanwu = df.parse(dwSolarDate.getYear() + "-" + dwSolarDate.getMonth() + "-" + dwSolarDate.getDay());
+            Long dwj = (duanwu.getTime() - date.getTime())/24/60/60/1000;
+            if (dwj < 0 ){
+                duanwu = df.parse((dwSolarDate.getYear() + 1) + "-" + dwSolarDate.getMonth() + "-" + dwSolarDate.getDay());
+                dwj = (duanwu.getTime() - date.getTime())/24/60/60/1000;
+            }
+            friend.setDuanwu(String.valueOf(dwj));
 
             //元旦
             yd = df.parse(calendar.get(Calendar.YEAR) + "-01-01");
