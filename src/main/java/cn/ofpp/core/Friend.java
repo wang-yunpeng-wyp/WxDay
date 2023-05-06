@@ -41,6 +41,15 @@ public class Friend {
     private String yuandan;
     private String chuxi;
     private String nextTime;
+    private String duanwu;
+
+    public String getDuanwu() {
+        return duanwu;
+    }
+
+    public void setDuanwu(String duanwu) {
+        this.duanwu = duanwu;
+    }
 
     public String getChuxi() {
         return chuxi;
