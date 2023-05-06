@@ -1,9 +1,7 @@
 package cn.ofpp.core;
 
 import cn.hutool.core.util.StrUtil;
-import cn.ofpp.calendarist.Calendarist;
-import cn.ofpp.calendarist.pojo.LunarDate;
-import cn.ofpp.calendarist.pojo.SolarDate;
+import cn.hutool.json.JSONArray;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateData;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateMessage;
 
@@ -40,13 +38,13 @@ public class MessageFactory {
         System.out.println("当前时间："+time);
 
         if (time > 12) {
-            System.err.println("下午");
-            wxip = "YeoxbAZEAjxT3xyprp9rhM7ODc3PmnfBhucvd4L4kGQ"; //下午
+
+            wxip = "TGkBXuHy1mRWHvVDhkNdhW_j7DhRHyQrzRJA4CWN6Gw"; //下午
         } else {
-            System.err.println("上午");
-            wxip = "pQJARuEUO-PkWCnMixNLBeDkXPqE8DG42I9Dbx7N1ZI";//上午
+            wxip = "RYneCazpNYPshuUK1S0SG3EfjxGEtQyVuEEPdABpxHk";//上午
         }
 
+        System.err.println(buildData(friend));
         return WxMpTemplateMessage.builder()
                 .url("http://slither.io/") // 点击后的跳转链接 可自行修改 也可以不填
                 .toUser(friend.getUserId())
@@ -56,7 +54,6 @@ public class MessageFactory {
     }
 
     private static List<WxMpTemplateData> buildData(Friend friend) {
-        String kong = "\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020";
         WeatherInfo weather = GaodeUtil.getNowWeatherInfo(getAdcCode(friend.getProvince(), friend.getCity()));
         RandomAncientPoetry.AncientPoetry ancientPoetry = null;
         try{
@@ -66,12 +63,10 @@ public class MessageFactory {
             System.out.println("获取古诗接口失败！！！");
         }
         ArrayList list = new ArrayList();
-        //list.add(  TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color("#D92AD9").build());
         list.add( TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("nextSpring").value(friend.getSpring()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("friendName").value(kong+friend.getFullName()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("howOld").value("宝贝今天也要元气满满哟!!\r\n"+kong+"老婆我爱你♥\r\n" +
-                kong+"还有"+friend.getNextTime() + "天就见面啦!!").color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("friendName").value("宝贝今天也要元气满满哟!! ").color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("howOld").value("爱你♥爱你♥").color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("nextTime").value(friend.getNextTime()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("howLongLived").value(friend.getHowLongLived()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextBirthday").value(friend.getNextBirthdayDays()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("nextMemorialDay").value(friend.getNextMemorialDay()).color(cor()).build() );
@@ -89,8 +84,8 @@ public class MessageFactory {
         list.add(TemplateDataBuilder.builder().name("zhongqiu").value(friend.getZhongqiui()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("shiyi").value(friend.getShiyi()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("chuxi").value(friend.getChuxi()).color(cor()).build());
-        list.add(TemplateDataBuilder.builder().name("tx").value("浪漫的灵魂，从不向平淡的日子妥协").color(cor()).build());
-        //list.add(TemplateDataBuilder.builder().name("txx").value("").color(cor()).build());
+        list.add(TemplateDataBuilder.builder().name("duanwu").value(friend.getDuanwu()).color(cor()).build());
+
         /** 当前模板 模板最大长度600个字符 当前600个字符
          {{friendName.DATA}}
          {{howOld.DATA}}
@@ -115,12 +110,11 @@ public class MessageFactory {
 
          */
 
-
         return list;
     }
 
     public static String cor() {
-        Random random = new Random();
+        Random random = new Random();//#173177
         int nextInt = random.nextInt(0xffffff + 1);
         String colorCode = String.format("#%06x", nextInt);
 
