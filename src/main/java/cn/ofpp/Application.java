@@ -48,7 +48,7 @@ public class Application {
                 Wx.sendTemplateMessage(MessageFactory.resolveMessage(wypFriend));
                 break;
             }catch (Exception e){
-                e.printStackTrace();
+               
                 System.out.println("王云鹏微信失败;一共执行了 "+wyp+" 次");
                 try{
                     Thread.sleep(2000);
