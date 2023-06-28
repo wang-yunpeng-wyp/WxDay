@@ -34,7 +34,7 @@ public class Application {
     public static void main(String[] args) {
 
         Bootstrap.init();
-        String nextdata= "2023-06-21";//下次见面时间
+        String nextdata= "2023-09-28";//下次见面时间
         // new 一个 女友
         GirlFriend wypFriend = new GirlFriend("我的宝儿",
                 "北京市", "顺义区", "1998-03-10", "2022-02-04", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03");
@@ -62,7 +62,8 @@ public class Application {
         //new 一个 女友
        GirlFriend zycFriend = new GirlFriend("我的宝儿,爱你！",
                "安阳市", "滑县", "1998-12-09", "2022-02-04", "oaiup5lY17LhWIOqwu5hMBnUKynY","2022-02-03");
-        WxMpTemplateMessage wxMpTemplateMessage = MessageFactory.resolveMessage(zycFriend);
+        
+       // WxMpTemplateMessage wxMpTemplateMessage = MessageFactory.resolveMessage(zycFriend);
         //下次见面时间
         zycFriend.setNextTime(nextdata);
         zycFriend = lunarTime(zycFriend);
@@ -83,6 +84,33 @@ public class Application {
             }
 
         }
+
+                //给宝贝的再发给我一份
+       GirlFriend wypzyc = new GirlFriend("我的宝儿,爱你！",
+               "安阳市", "滑县", "1998-12-09", "2022-02-04", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03");
+        
+       // WxMpTemplateMessage wxMpTemplateMessage = MessageFactory.resolveMessage(wypzyc);
+        //下次见面时间
+        zycFriend.setNextTime(nextdata);
+        zycFriend = lunarTime(wypzyc);
+        int bbb = 0;
+        while (true){
+            try{
+
+                bbb++;
+                Wx.sendTemplateMessage(MessageFactory.resolveMessage(wypzyc));
+                break;
+            }catch (Exception e){
+                System.out.println("宝贝微信失败;一共执行了 "+bbb+" 次");
+                try{
+                    Thread.sleep(2000);
+                }catch (InterruptedException t){
+                    System.out.println("宝贝休息异常");
+                }
+            }
+
+        }
+        
 
         System.err.println("发送成功");
 
