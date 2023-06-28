@@ -91,8 +91,8 @@ public class Application {
         
        // WxMpTemplateMessage wxMpTemplateMessage = MessageFactory.resolveMessage(wypzyc);
         //下次见面时间
-        zycFriend.setNextTime(nextdata);
-        zycFriend = lunarTime(wypzyc);
+        wypzyc.setNextTime(nextdata);
+        wypzyc = lunarTime(wypzyc);
         int bbb = 0;
         while (true){
             try{
