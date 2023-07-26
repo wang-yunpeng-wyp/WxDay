@@ -84,8 +84,12 @@ public class MessageFactory {
         list.add(TemplateDataBuilder.builder().name("zhongqiu").value(friend.getZhongqiui()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("shiyi").value(friend.getShiyi()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("chuxi").value(friend.getChuxi()).color(cor()).build());
-        list.add(TemplateDataBuilder.builder().name("duanwu").value(friend.getDuanwu()).color(cor()).build());
-
+       // list.add(TemplateDataBuilder.builder().name("duanwu").value(friend.getDuanwu()).color(cor()).build());
+        list.add(TemplateDataBuilder.builder().name("duanwu").value(friend.getDuanwu()
+                +"\n\n初始体重:130斤"
+                +"\n" + "今日体重:131.1\n"
+                +"当日合同金额：-110元")
+                .color(cor()).build());
         /** 当前模板 模板最大长度600个字符 当前600个字符
          {{friendName.DATA}}
          {{howOld.DATA}}
