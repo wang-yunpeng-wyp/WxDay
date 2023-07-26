@@ -41,7 +41,7 @@ public class MessageFactory {
 
             wxip = "TGkBXuHy1mRWHvVDhkNdhW_j7DhRHyQrzRJA4CWN6Gw"; //下午
         } else {
-            wxip = "RYneCazpNYPshuUK1S0SG3EfjxGEtQyVuEEPdABpxHk";//上午
+            wxip = "6BOsfAwYpciCefNkweIu8jgJ6ntmJU3VESUXQpQ1jfU";//上午
         }
 
         System.err.println(buildData(friend));
@@ -62,10 +62,9 @@ public class MessageFactory {
             e.printStackTrace();
             System.out.println("获取古诗接口失败！！！");
         }
-        String str = "初始体重:134斤"
-                +"" + "今日体重:131.1"
-                +"当日合同金额390元";
+         String str = "初始体重:130斤\n今日体重:131.1\n当日合同金额：390元";
         ArrayList list = new ArrayList();
+         list.add( TemplateDataBuilder.builder().name("str").value(str).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("friendName").value("宝贝今天也要元气满满哟!! ").color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("howOld").value("爱你♥爱你♥").color(cor()).build() );
