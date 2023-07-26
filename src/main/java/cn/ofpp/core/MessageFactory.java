@@ -62,6 +62,9 @@ public class MessageFactory {
             e.printStackTrace();
             System.out.println("获取古诗接口失败！！！");
         }
+        String str = "\n\n初始体重:130斤"
+                +"\n" + "今日体重:131.1\n"
+                +"当日合同金额：-110元";
         ArrayList list = new ArrayList();
         list.add( TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("friendName").value("宝贝今天也要元气满满哟!! ").color(cor()).build() );
@@ -80,9 +83,7 @@ public class MessageFactory {
         list.add( TemplateDataBuilder.builder().name("author").value(ancientPoetry.getAuthor()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("origin").value(ancientPoetry.getOrigin()).color(cor()).build() );
        // list.add( TemplateDataBuilder.builder().name("content").value(ancientPoetry.getContent()).color(cor()).build() );
-                list.add( TemplateDataBuilder.builder().name("content").value(ancientPoetry.getContent()+"\n\n初始体重:130斤"
-                +"\n" + "今日体重:131.1\n"
-                +"当日合同金额：-110元").color(cor()).build() );
+                list.add( TemplateDataBuilder.builder().name("content").value(ancientPoetry.getContent()+str).color(cor()).build() );
         list.add(TemplateDataBuilder.builder().name("wuyi").value(friend.getWuyi()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("zhongqiu").value(friend.getZhongqiui()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("shiyi").value(friend.getShiyi()).color(cor()).build());
