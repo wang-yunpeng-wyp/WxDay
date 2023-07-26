@@ -41,7 +41,7 @@ public class MessageFactory {
 
             wxip = "TGkBXuHy1mRWHvVDhkNdhW_j7DhRHyQrzRJA4CWN6Gw"; //下午
         } else {
-            wxip = "6BOsfAwYpciCefNkweIu8jgJ6ntmJU3VESUXQpQ1jfU";//上午
+            wxip = "Z-0lV8HZSaX_VLKj36wcfqHd2uvWRcQR8Or7Efqpge0";//上午
         }
 
         System.err.println(buildData(friend));
