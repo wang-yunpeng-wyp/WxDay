@@ -79,10 +79,10 @@ public class MessageFactory {
         list.add( TemplateDataBuilder.builder().name("winddirection").value(weather.getWinddirection() + "风").color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("windpower").value(weather.getWindpower() + "级").color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("humidity").value(weather.getHumidity()+ "%").color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("author").value(ancientPoetry.getAuthor()).color(cor()).build() );
-        list.add( TemplateDataBuilder.builder().name("origin").value(ancientPoetry.getOrigin()).color(cor()).build() );
+        //list.add( TemplateDataBuilder.builder().name("author").value(ancientPoetry.getAuthor()).color(cor()).build() );
+        //list.add( TemplateDataBuilder.builder().name("origin").value(ancientPoetry.getOrigin()).color(cor()).build() );
        // list.add( TemplateDataBuilder.builder().name("content").value(ancientPoetry.getContent()).color(cor()).build() );
-                list.add( TemplateDataBuilder.builder().name("content").value(ancientPoetry.getContent()+str).color(cor()).build() );
+              
         list.add(TemplateDataBuilder.builder().name("wuyi").value(friend.getWuyi()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("zhongqiu").value(friend.getZhongqiui()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("shiyi").value(friend.getShiyi()).color(cor()).build());
