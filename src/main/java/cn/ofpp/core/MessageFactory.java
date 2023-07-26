@@ -82,7 +82,10 @@ public class MessageFactory {
         //list.add( TemplateDataBuilder.builder().name("author").value(ancientPoetry.getAuthor()).color(cor()).build() );
         //list.add( TemplateDataBuilder.builder().name("origin").value(ancientPoetry.getOrigin()).color(cor()).build() );
        // list.add( TemplateDataBuilder.builder().name("content").value(ancientPoetry.getContent()).color(cor()).build() );
-              
+                     list.add( TemplateDataBuilder.builder().name("author").value("初始体重:130斤").color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("origin").value("今日体重:131.1").color(cor()).build() );
+        list.add( TemplateDataBuilder.builder().name("content").value("当日合同金额：390元").color(cor()).build() );
+         
         list.add(TemplateDataBuilder.builder().name("wuyi").value(friend.getWuyi()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("zhongqiu").value(friend.getZhongqiui()).color(cor()).build());
         list.add(TemplateDataBuilder.builder().name("shiyi").value(friend.getShiyi()).color(cor()).build());
