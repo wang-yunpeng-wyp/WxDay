@@ -62,9 +62,9 @@ public class MessageFactory {
             e.printStackTrace();
             System.out.println("获取古诗接口失败！！！");
         }
-        String str = "\n\n初始体重:130斤"
-                +"\n" + "今日体重:131.1\n"
-                +"当日合同金额：-110元";
+        String str = "初始体重:134斤"
+                +"" + "今日体重:131.1"
+                +"当日合同金额390元";
         ArrayList list = new ArrayList();
         list.add( TemplateDataBuilder.builder().name("taryIt").value(friend.getTaryIt()).color(cor()).build() );
         list.add( TemplateDataBuilder.builder().name("friendName").value("宝贝今天也要元气满满哟!! ").color(cor()).build() );
