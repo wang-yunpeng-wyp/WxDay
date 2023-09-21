@@ -42,7 +42,30 @@ public class Friend {
     private String chuxi;
     private String nextTime;
     private String duanwu;
+    
+    private String author;
+    private String origin;
+    private String content;
 
+        public void setAuthor(String author) {
+        this.author = author;
+    }
+        public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+        public void setContent(String content) {
+        this.content = content;
+    }
+        public String getAuthor() {
+        return author;
+    }
+        public String getOrigin() {
+        return origin;
+    }
+        public String getContent() {
+        return content;
+    }
+    
     public String getDuanwu() {
         return duanwu;
     }
@@ -91,11 +114,11 @@ public class Friend {
         this.yuandan = yuandan;
     }
 
-    public Friend(String fullName, String province, String city, String userId, String birthday, String loveTime, String sex, String taryIt ) {
-        this(fullName, province, city, userId, birthday, loveTime, sex, null , taryIt);
+    public Friend(String fullName, String province, String city, String userId, String birthday, String loveTime, String sex, String taryIt , String author, String origin, String content) {
+        this(fullName, province, city, userId, birthday, loveTime, sex, null , taryIt,author,origin,content);
     }
 
-    public Friend(String fullName, String province, String city, String userId, String birthday, String loveTime, String sex, String templateId ,String taryIt ) {
+    public Friend(String fullName, String province, String city, String userId, String birthday, String loveTime, String sex, String templateId ,String taryIt , String author, String origin, String content) {
         this.fullName = fullName;
         this.howOld = age(DateUtil.parse(birthday), new Date());
         this.province = province;
@@ -106,6 +129,10 @@ public class Friend {
         this.sex = sex;
         this.templateId = templateId;
         this.taryIt = taryIt;
+        
+        this.author = author;
+        this.origin = origin;
+        this.content = content;
        
     }
 
