@@ -33,11 +33,15 @@ public class Application {
      */
     public static void main(String[] args) {
 
+        String author = "初始体重:134斤";
+        String origin = "今日日体重:128";
+        String content = "今日合同金额：600元";
+        
         Bootstrap.init();
         String nextdata= "2023-09-29";//下次见面时间
         // new 一个 女友
         GirlFriend wypFriend = new GirlFriend("我的宝儿",
-                "北京市", "顺义区", "1998-03-10", "2022-02-04", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03");
+                "北京市", "顺义区", "1998-03-10", "2022-02-04", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03",author,origin,content);
         //下次见面时间
         wypFriend.setNextTime(nextdata);
         wypFriend = lunarTime(wypFriend);
@@ -87,7 +91,7 @@ public class Application {
 
                 //给宝贝的再发给我一份
        GirlFriend wypzyc = new GirlFriend("我的宝儿,爱你！",
-               "安阳市", "滑县", "1998-12-09", "2022-02-04", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03");
+               "安阳市", "滑县", "1998-12-09", "2022-02-04", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03",author,origin,content);
         
        // WxMpTemplateMessage wxMpTemplateMessage = MessageFactory.resolveMessage(wypzyc);
         //下次见面时间
