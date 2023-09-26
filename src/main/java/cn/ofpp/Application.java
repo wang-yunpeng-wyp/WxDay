@@ -34,8 +34,8 @@ public class Application {
     public static void main(String[] args) {
 
         String author = "初始体重:134斤";
-        String origin = "今日日体重:127.2";
-        String content = "今日合同金额：680元";
+        String origin = "今日日体重:124.5";
+        String content = "今日合同金额：950元";
         
         Bootstrap.init();
         String nextdata= "2023-09-29";//下次见面时间
