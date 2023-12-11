@@ -34,11 +34,11 @@ public class Application {
     public static void main(String[] args) {
 
         String author = "初始体重:134斤";
-        String origin = "今日日体重:130";
-        String content = "今日合同金额：400元";
+        String origin = "今日日体重:136";
+        String content = "今日合同金额：-200元";
         
         Bootstrap.init();
-        String nextdata= "2023-12-09";//下次见面时间
+        String nextdata= "2023-12-29";//下次见面时间
         // new 一个 女友
         GirlFriend wypFriend = new GirlFriend("我的宝儿",
                 "北京市", "顺义区", "1998-03-10", "2022-02-04", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03",author,origin,content);
@@ -65,7 +65,7 @@ public class Application {
 
         //new 一个 女友
        GirlFriend zycFriend = new GirlFriend("我的宝儿,爱你！",
-               "安阳市", "滑县", "1998-12-09", "2022-02-04", "oaiup5lY17LhWIOqwu5hMBnUKynY","2022-02-03",author,origin,content);
+               "安阳市", "滑县-半坡店", "1998-12-09", "2022-02-04", "oaiup5lY17LhWIOqwu5hMBnUKynY","2022-02-03",author,origin,content);
         
        // WxMpTemplateMessage wxMpTemplateMessage = MessageFactory.resolveMessage(zycFriend);
         //下次见面时间
