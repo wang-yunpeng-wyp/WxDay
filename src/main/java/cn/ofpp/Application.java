@@ -34,11 +34,11 @@ public class Application {
     public static void main(String[] args) {
 
         String author = "初始体重:134斤";
-        String origin = "今日日体重:133";
-        String content = "今日合同金额：100元😀";
+        String origin = "今日日体重:128";
+        String content = "今日合同金额：600元😀";
         
         Bootstrap.init();
-        String nextdata= "2023-12-29";//下次见面时间
+        String nextdata= "2024-01-12";//下次见面时间
         // new 一个 女友
         GirlFriend wypFriend = new GirlFriend("我的宝儿",
                 "北京市", "顺义区", "1998-03-10", "2022-02-04", "oaiup5nPe2aGJ24Uc2nQI_sJK7Yw","2022-02-03",author,origin,content);
