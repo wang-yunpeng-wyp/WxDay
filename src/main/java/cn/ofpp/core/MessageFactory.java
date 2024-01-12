@@ -36,9 +36,9 @@ public class MessageFactory {
         Integer time =  Integer.valueOf(format);
             
         if (time > 12) {
-            wxip = "to1zer7wJVEBxlTPcr8X4JV4qfxWi4EGlUxZjqgmdxU"; //下午
+            wxip = "5mILlPqKN7suERdRxQh1nO0LiA-_-ZCgejf18VpVXaM"; //下午
         } else {
-            wxip = "to1zer7wJVEBxlTPcr8X4JV4qfxWi4EGlUxZjqgmdxU";//上午
+            wxip = "5mILlPqKN7suERdRxQh1nO0LiA-_-ZCgejf18VpVXaM";//上午
         }
 
         return WxMpTemplateMessage.builder()
