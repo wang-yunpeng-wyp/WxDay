@@ -36,12 +36,9 @@ public class MessageFactory {
         Integer time =  Integer.valueOf(format);
             
         if (time > 12) {
-
-//            wxip = "TGkBXuHy1mRWHvVDhkNdhW_j7DhRHyQrzRJA4CWN6Gw"; //下午
-            wxip = "V8r13pWT4pN1vaHpQJxLt3TZgrYLCUF0JuIu3NoBP5M"; //下午
-//            wxip = "Z-0lV8HZSaX_VLKj36wcfqHd2uvWRcQR8Or7Efqpge0"; //下午
+            wxip = "to1zer7wJVEBxlTPcr8X4JV4qfxWi4EGlUxZjqgmdxU"; //下午
         } else {
-            wxip = "RYneCazpNYPshuUK1S0SG3EfjxGEtQyVuEEPdABpxHk";//上午
+            wxip = "to1zer7wJVEBxlTPcr8X4JV4qfxWi4EGlUxZjqgmdxU";//上午
         }
 
         return WxMpTemplateMessage.builder()
