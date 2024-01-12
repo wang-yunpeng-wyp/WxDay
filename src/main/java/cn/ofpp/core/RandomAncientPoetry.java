@@ -11,8 +11,10 @@ import cn.hutool.json.JSONUtil;
 public class RandomAncientPoetry {
 
     public static AncientPoetry getNext() {
-        String res = HttpUtil.get("https://v1.jinrishici.com/shuqing/aiqing", 4000);
-        return JSONUtil.parseObj(res).toBean(AncientPoetry.class);
+
+       /* String res = HttpUtil.get("https://v1.jinrishici.com/shuqing/aiqing", 4000);
+        return JSONUtil.parseObj(res).toBean(AncientPoetry.class);*/
+        return null;
     }
 
     static class AncientPoetry {
